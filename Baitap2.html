@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            display: grid;
+            grid-template-rows: auto auto 2fr 1fr auto;
+            grid-template-columns: 1fr 3fr;
+            grid-template-areas:
+                "header header"
+                "menu menu"
+                "sidebar main"
+                "sidebar main"
+                "footer footer";
+            height: 100vh;
+            background-color: #f5deb3;
+        }
+        .header {
+            grid-area: header;
+            background: #f5deb3;
+            padding: 20px;
+            text-align: center;
+        }
+        .menu {
+            grid-area: menu;
+            background: #2f4f4f;
+            padding: 15px;
+            color: white;
+            text-align: center;
+        }
+        .sidebar {
+            grid-area: sidebar;
+            background: purple;
+            padding: 20px;
+            color: white;
+        }
+        .main {
+            grid-area: main;
+            display: grid;
+            grid-template-rows: 2fr 1fr;
+            gap: 0px;
+        }
+        .slider {
+            background: #e9967a;
+            padding: 20px;
+        }
+        .highlight {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .highlight div {
+            background: #4682b4;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        .footer {
+            grid-area: footer;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background: #f5deb3;
+            text-align: center;
+            padding: 5px 10px;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            min-height: 50px;
+            outline: 1px solid black;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+        .footer div {
+            border-right: 1px solid black;
+            padding: 10px;
+        }
+        .footer div:last-child {
+            border-right: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">header</div>
+        <div class="menu">menu ngang</div>
+        <div class="sidebar">slide bar</div>
+        <div class="main">
+            <div class="slider">slider</div>
+            <div class="highlight">
+                <div>sp nổi bật 1</div>
+                <div>sp nổi bật 2</div>
+            </div>
+        </div>
+        <div class="footer">
+            <div>f1</div>
+            <div>f2</div>
+            <div>f3</div>
+            <div>f4</div>
+        </div>
+    </div>
+</body>
+</html>
